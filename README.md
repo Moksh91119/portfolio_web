@@ -33,35 +33,26 @@ Building this portfolio wasn't without its challenges. Here are some of the key 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-portfolio.git
+   git clone https://github.com/Moksh91119/portfolio_web.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd your-portfolio
+   cd portfolio_web
    ```
 
 3. Install dependencies:
 
    ```bash
-   npm install
+   yarn
    ```
 
 4. Run the development server:
 
    ```bash
-   npm start
+   yarn dev
    ```
-
-
-## Contributions
-
-Feel free to open issues or submit pull requests if you find any bugs or have suggestions for improvement. Your feedback is highly appreciated!
-
-## Connect With Me
-
-Let's connect! You can reach out to me on [LinkedIn](https://www.linkedin.com/in/your-linkedin-profile/) or [Twitter](https://twitter.com/your-twitter-handle/).
-
+   
 
 Thank you for exploring my personal portfolio project! I hope you find it both informative and visually engaging. If you have any questions or suggestions, feel free to reach out. Happy coding! 🚀✨
