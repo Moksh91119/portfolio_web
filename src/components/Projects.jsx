@@ -26,6 +26,18 @@ export const projects = [
     description: "Use of React to create one page trial website for GPT-3",
   },
   {
+    title: "Invoice Maker",
+    url: "https://github.com/Moksh91119/invoice-maker",
+    image: "projects/invoice_maker.png",
+    description: "Use of React and IndexedDB for creating a Buisness Dashboard",
+  },
+  {
+    title: "Hinge Dating",
+    url: "https://github.com/Moksh91119/hinge-dating",
+    image: "projects/hinge_dating.png",
+    description: "Full Stack Web and Mobile app for Dating using React Native and Node.js",
+  },
+  {
     title: "Portfolio Website",
     url: "https://github.com/Moksh91119/portfolio_web",
     image: "projects/folio_web.png",
