@@ -26,10 +26,22 @@ export const projects = [
     description: "Use of React to create one page trial website for GPT-3",
   },
   {
+    title: "Portfolio Website",
+    url: "https://github.com/Moksh91119/portfolio_web",
+    image: "projects/folio_web.png",
+    description: "Use of React and Three.js to create a portfolio website",
+  },
+  {
     title: "Cafe Website",
     url: "https://github.com/Moksh91119/Restaurant_Management_System",
     image: "projects/symbi_eat.png",
     description: "Use of HTML, CSS and JS to create a website for a cafe",
+  },
+  {
+    title: "Crypto Transfer",
+    url: "https://github.com/Moksh91119/crypto_transfer",
+    image: "projects/crypto_transfer.png",
+    description: "WEB3 based Crypto Transfer using React and Solidity",
   },
 ];
 
