@@ -1,0 +1,214 @@
+import { Image, Text } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import { animate, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion-3d";
+import { atom, useAtom } from "jotai";
+import { useEffect, useRef } from "react";
+
+export const projects = [
+  {
+    title: "Lex Programs",
+    url: "https://github.com/Moksh91119/Lex-programs",
+    image: "projects/lex-programs.png",
+    description: "Using lex and yacc to create simple programs",
+  },
+  {
+    title: "Classification",
+    url: "https://github.com/Moksh91119/Asteroid-Hazard-Classification",
+    image: "projects/asteroid-hazard-classification.png",
+    description: "Using AIML methods for classifying asteroids",
+  },
+  {
+    title: "fashion system",
+    url: "https://github.com/Moksh91119/fashion-recommender-system ",
+    image: "projects/fashion-recommender-system.png",
+    description: "Using ML methods for a fashion recommender system",
+  },
+  {
+    title: "data analysis",
+    url: "https://github.com/Moksh91119/olympics-data-analysis",
+    image: "projects/olympics-data-analysis.png",
+    description: "Using ML methods to analyze olympics data",
+  },
+  {
+    title: "chat analyzer",
+    url: "https://github.com/Moksh91119/whatsapp-chat-analyzer",
+    image: "projects/whatsapp-chat-analyzer.png",
+    description: "Using ML methods to analyze whatsapp chat data",
+  },
+  {
+    title: "sms classifier",
+    url: "https://github.com/Moksh91119/sms-spam-classifier",
+    image: "projects/sms-spam-classifier.png",
+    description: "Using ML methods to classify spam messages",
+  },
+  {
+    title: "Customer Churn",
+    url: "https://github.com/Moksh91119/Customer-Churn-Prediction",
+    image: "projects/customer-churn-prediction.png",
+    description: "Using ML methods to predict customer churn",
+  },
+  {
+    title: "File sharing",
+    url: "https://github.com/Moksh91119/File-sharing-platform",
+    image: "projects/file-sharing-platform.png",
+    description: "Using blockchain to create a file sharing platform",
+  },
+  {
+    title: "Airplane Journey",
+    url: "https://github.com/Moksh91119/Airplane-Journey",
+    image: "projects/airplane-journey.png",
+    description: "Using three.js to create a simple airplane journey",
+  },
+  {
+    title: "stack game",
+    url: "https://github.com/Moksh91119/stack_game",
+    image: "projects/stack-game.png",
+    description: "Using HTML and JS to create a simple stack game",
+  },
+  {
+    title: "simcity clone",
+    url: "https://github.com/Moksh91119/simcity-threejs-clone",
+    image: "projects/simcity-threejs-clone.png",
+    description: "Using three.js to create a simple simcity clone",
+  },
+  {
+    title: "Sketchbook Game",
+    url: "https://github.com/Moksh91119/Sketchbook",
+    image: "projects/sketchbook-game.png",
+    description: "Using three.js and cannon.js to create a web based game",
+  },
+  {
+    title: "shop wizard",
+    url: "https://github.com/Moksh91119/shop_onboarding_wizard",
+    image: "projects/shop-onboarding-wizard.png",
+    description: "Using React to create a shop onboarding wizard",
+  },
+  {
+    title: "Restaurant Web",
+    url: "https://github.com/Moksh91119/restaurant-page-using-react",
+    image: "projects/restaurant_react.png",
+    description: "Use of React to create one page quick website for a restaurant",
+  },
+  {
+    title: "Admin Dashboard",
+    url: "https://github.com/Moksh91119/admin_dashboard_app",
+    image: "projects/dashboard.png",
+    description: "Use of ReactApi to create an Admin Dashboard",
+  },
+  {
+    title: "GPT-3 Website",
+    url: "https://github.com/Moksh91119/GPT-3_website_using_react",
+    image: "projects/gpt3.png",
+    description: "Use of React to create one page trial website for GPT-3",
+  },
+  {
+    title: "Invoice Maker",
+    url: "https://github.com/Moksh91119/invoice-maker",
+    image: "projects/invoice_maker.png",
+    description: "Use of React and IndexedDB for creating a Buisness Dashboard",
+  },
+  {
+    title: "Hinge Dating",
+    url: "https://github.com/Moksh91119/hinge-dating",
+    image: "projects/hinge_dating.png",
+    description: "Full Stack Web and Mobile app for Dating using React Native and Node.js",
+  },
+  {
+    title: "Portfolio Website",
+    url: "https://github.com/Moksh91119/portfolio_web",
+    image: "projects/folio_web.png",
+    description: "Use of React and Three.js to create a portfolio website",
+  },
+  {
+    title: "Cafe Website",
+    url: "https://github.com/Moksh91119/Restaurant_Management_System",
+    image: "projects/symbi_eat.png",
+    description: "Use of HTML, CSS and JS to create a website for a cafe",
+  },
+  {
+    title: "Crypto Transfer",
+    url: "https://github.com/Moksh91119/crypto_transfer",
+    image: "projects/crypto_transfer.png",
+    description: "WEB3 based Crypto Transfer using React and Solidity",
+  },
+];
+
+const Project = (props) => {
+  const { project, highlighted } = props;
+
+  const background = useRef();
+  const bgOpacity = useMotionValue(0.4);
+
+  useEffect(() => {
+    animate(bgOpacity, highlighted ? 0.7 : 0.4);
+  }, [highlighted]);
+
+  useFrame(() => {
+    background.current.material.opacity = bgOpacity.get();
+  });
+
+  return (
+    <group {...props}>
+      <mesh
+        position-z={-0.001}
+        onClick={() => window.open(project.url, "_blank")}
+        ref={background}
+      >
+        <planeGeometry args={[2.2, 2]} />
+        <meshBasicMaterial color="black" transparent opacity={0.4} />
+      </mesh>
+      <Image
+        scale={[2, 1.2, 1]}
+        url={project.image}
+        toneMapped={false}
+        position-y={0.3}
+      />
+      <Text
+        maxWidth={2}
+        anchorX={"left"}
+        anchorY={"top"}
+        fontSize={0.2}
+        position={[-1, -0.4, 0]}
+      >
+        {project.title.toUpperCase()}
+      </Text>
+      <Text
+        maxWidth={2}
+        anchorX="left"
+        anchorY="top"
+        fontSize={0.1}
+        position={[-1, -0.6, 0]}
+      >
+        {project.description}
+      </Text>
+    </group>
+  );
+};
+
+export const currentProjectAtom = atom(Math.floor(projects.length / 2));
+
+export const Projects = () => {
+  const { viewport } = useThree();
+  const [currentProject] = useAtom(currentProjectAtom);
+
+  return (
+    <group position-y={-viewport.height * 2 + 1}>
+      {projects.map((project, index) => (
+        <motion.group
+          key={"project_" + index}
+          position={[index * 2.5, 0, -3]}
+          animate={{
+            x: 0 + (index - currentProject) * 2.5,
+            y: currentProject === index ? 0 : -0.1,
+            z: currentProject === index ? -2 : -3,
+            rotateX: currentProject === index ? 0 : -Math.PI / 3,
+            rotateZ: currentProject === index ? 0 : -0.1 * Math.PI,
+          }}
+        >
+          <Project project={project} highlighted={index === currentProject} />
+        </motion.group>
+      ))}
+    </group>
+  );
+};
