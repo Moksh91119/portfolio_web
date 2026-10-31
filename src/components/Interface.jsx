@@ -98,24 +98,24 @@ const AboutSection = (props) => {
 
 const skills = [
   {
-    title: "React / Vue / Angular",
-    level: 90,
+    title: "TypeScript / JavaScript",
+    level: 100,
   },
   {
-    title: "Threejs / React Three Fiber",
-    level: 75,
+    title: "React / Next / Angular",
+    level: 100,
   },
   {
-    title: "Node / Express",
-    level: 70,
+    title: "Node / Express / Nest",
+    level: 100,
   },
   {
-    title: "SQL / MongoDB",
-    level: 70,
+    title: "PostgreSQL / MongoDB",
+    level: 100,
   },
   {
-    title: "HTML / CSS / JS",
-    level: 90,
+    title: "HTML / CSS / Tailwind",
+    level: 100,
   },
 ];
 const languages = [
